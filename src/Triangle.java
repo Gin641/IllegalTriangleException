@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
 public class Triangle {
     private double side1;
     private double side2;
     private double side3;
-    private static Scanner sc = new Scanner(System.in);
     public Triangle(){
     }
     public Triangle(double side1,double side2,double side3) throws IllegalTriangleException{
@@ -15,7 +12,15 @@ public class Triangle {
     }
     public boolean isTriangle(){
         if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2)){
-            return true;
+           if (Math.pow(side1,2) == Math.pow(side2,2) + Math.pow(side3,2) ||
+                   Math.pow(side2,2) == Math.pow(side1,2) + Math.pow(side3,2) ||
+                   Math.pow(side3,2) == Math.pow(side1,2) + Math.pow(side2,2)){
+               System.out.println("Hình này là tam giác vuông");
+               return true;
+           }else {
+               System.out.println("Hình này là tam giác");
+               return true;
+           }
         }else {
             return false;
         }
