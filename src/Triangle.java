@@ -1,20 +1,20 @@
 public class Triangle {
-    private double side1;
-    private double side2;
-    private double side3;
+    private double size1;
+    private double size2;
+    private double size3;
     public Triangle(){
     }
-    public Triangle(double side1,double side2,double side3) throws IllegalTriangleException{
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+    public Triangle(double size1,double size2,double size3) throws IllegalTriangleException{
+        this.size1 = size1;
+        this.size2 = size2;
+        this.size3 = size3;
         checkTriangle();
     }
     public boolean isTriangle(){
-        if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2)){
-           if (Math.pow(side1,2) == Math.pow(side2,2) + Math.pow(side3,2) ||
-                   Math.pow(side2,2) == Math.pow(side1,2) + Math.pow(side3,2) ||
-                   Math.pow(side3,2) == Math.pow(side1,2) + Math.pow(side2,2)){
+        if ((size1 + size2 > size3) && (size2 + size3 > size1) && (size1 + size3 > size2)){
+           if (Math.pow(size1,2) == Math.pow(size2,2) + Math.pow(size3,2) ||
+                   Math.pow(size2,2) == Math.pow(size1,2) + Math.pow(size3,2) ||
+                   Math.pow(size3,2) == Math.pow(size1,2) + Math.pow(size2,2)){
                System.out.println("Hình này là tam giác vuông");
                return true;
            }else {
@@ -27,7 +27,7 @@ public class Triangle {
     }
     private void checkTriangle() throws IllegalTriangleException{
         if (isTriangle() == false){
-            throw new IllegalTriangleException(side1, side2, side3);
+            throw new IllegalTriangleException(size1, size2, size3);
         }
     }
 }

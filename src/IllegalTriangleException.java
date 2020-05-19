@@ -1,11 +1,11 @@
 public class IllegalTriangleException extends Exception {
-    private double side1;
-    private double side2;
-    private double side3;
-    public IllegalTriangleException(double side1,double side2,double side3){
+    private double size1;
+    private double size2;
+    private double size3;
+    public IllegalTriangleException(double size1, double size2, double size3){
         super("Không phải tam giác");
-            this.side1 = side1;
-            this.side2 = side2;
-            this.side3 = side3;
+            this.size1 = size1;
+            this.size2 = size2;
+            this.size3 = size3;
     }
 }
